@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07070b" />
+    <meta name="description" content="EndlessAudios & Morley — Presets, Editing und Community." />
+    <title>EndlessAudios™ — Morley.ae</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="/" aria-label="EndlessAudios Startseite"><span class="brand-dot"></span> ENDLESS<span>/</span>AUDIOS</a>
+      <nav aria-label="Hauptnavigation">
+        <a href="/" data-route="home">Hub</a>
+        <a href="/presets" data-route="presets">Presets</a>
+      </nav>
+      <a class="nav-cta" href="/presets">Explore <span>↗</span></a>
+    </header>
+
+    <main>
+      <section id="home-view" class="view">
+        <section class="linktree">
+          <div class="profile reveal">
+            <div class="profile-mark">EA</div>
+            <p class="eyebrow">ENDLESSAUDIOS™ × MORLEY.AE</p>
+            <h1>Editing.<br /><em>Community.</em></h1>
+            <p>Alle offiziellen Links, Presets und Socials.</p>
+          </div>
+          <div id="link-list" class="link-list"></div>
+          <p class="linktree-note">Wähle einen Link, um weiterzugehen.</p>
+        </section>
+      </section>
+
+      <section id="presets-view" class="view is-hidden">
+        <div class="presets-hero reveal">
+          <p class="eyebrow"><i></i> MORLEY.AE / ASSETS</p>
+          <h1>Give your edits<br /><em>an edge.</em></h1>
+          <p>Handverlesene Looks für den Moment, in dem dein Edit nicht nur gut, sondern unverwechselbar sein soll.</p>
+        </div>
+        <section class="catalogue">
+          <div class="catalogue-top reveal"><div><p class="eyebrow"><i></i> DROP_001</p><h2>Preset <em>collection.</em></h2></div><button id="admin-trigger" class="button button-ghost">Owner access <span>⊹</span></button></div>
+          <div id="product-grid" class="product-grid"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer><span>© <span id="year"></span> ENDLESSAUDIOS™</span><span>MADE FOR THE LOOP <b>✦</b></span><a href="/presets">MORLEY.AE</a></footer>
+
+    <dialog id="admin-modal" class="modal">
+      <div class="modal-inner">
+        <button class="modal-close" data-close-modal aria-label="Modal schließen">×</button>
+        <div id="login-panel"><p class="eyebrow"><i></i> PRIVATE AREA</p><h2>Owner <em>access.</em></h2><p class="modal-copy">Melde dich an, um die Preset-Sammlung zu verwalten.</p><form id="login-form"><label>Passwort<input id="admin-password" type="password" autocomplete="current-password" placeholder="••••••••" required /></label><p id="login-error" class="form-error" aria-live="polite"></p><button class="button button-primary" type="submit">Admin-Modus öffnen <span>→</span></button></form><small>Demo-Passwort: <code>morley</code> — vor dem Livegang in <code>app.js</code> ändern.</small></div>
+        <div id="admin-panel" hidden><div class="admin-title"><div><p class="eyebrow"><i></i> ADMIN MODE</p><h2>Neues <em>Preset.</em></h2></div><button id="logout" class="text-button">Abmelden</button></div><form id="product-form" class="product-form"><label>Titel<input name="title" maxlength="60" placeholder="z. B. Nightshift Pack" required /></label><label>Preis<input name="price" inputmode="decimal" placeholder="z. B. 9,99 €" required /></label><label class="wide">Beschreibung<textarea name="description" maxlength="260" placeholder="Was macht dieses Preset besonders?" required></textarea></label><label class="wide">Vorschaubild-URL<input name="image" type="url" placeholder="https://images.unsplash.com/..." required /></label><label class="wide">Payhip-Link<input name="link" type="url" value="https://payhip.com" required /></label><button class="button button-primary" type="submit">Produkt veröffentlichen <span>+</span></button></form><p id="save-message" class="save-message" aria-live="polite"></p></div>
+      </div>
+    </dialog>
+    <template id="product-template"><article class="product-card reveal"><div class="product-image"><img alt="" loading="lazy" /><span class="product-number"></span><div class="image-shine"></div></div><div class="product-info"><div><p class="product-type">MORLEY.AE PRESET</p><h3></h3></div><strong class="product-price"></strong></div><p class="product-description"></p><a class="buy-button" target="_blank" rel="noopener">Jetzt kaufen <span>↗</span></a></article></template>
+    <script src="app.js"></script>
+  </body>
+</html>
